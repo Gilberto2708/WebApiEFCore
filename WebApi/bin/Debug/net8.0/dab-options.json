@@ -1,0 +1,48 @@
+﻿{
+   "ConnectionStringName": "dab-connection-string",
+   "Dacpac": null,
+   "DatabaseType": 3,
+   "ProjectPath": "D:\\PROYECTOS\\EF-Power-Tool\\EF-Power-Tool\\WebApi",
+   "Tables": [
+      {
+         "Name": "[dbo].[Categoria]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Cliente]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EstadoDocumento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Factura]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FacturaDetalle]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FormaPago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Linea]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MetodoPago]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Moneda]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Producto]",
+         "ObjectType": 0
+      }
+   ]
+}

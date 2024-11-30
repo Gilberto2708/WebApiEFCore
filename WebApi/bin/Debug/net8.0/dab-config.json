@@ -1,0 +1,571 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v1.3.19/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "@env('dab-connection-string')",
+    "options": {
+      "set-session-context": false
+    }
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api",
+      "request-body-strict": true
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      },
+      "mode": "development"
+    }
+  },
+  "entities": {
+    "Categorium": {
+      "source": {
+        "object": "[dbo].[Categoria]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Categorium",
+          "plural": "Categoria"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "idCategoria",
+                  "Descripcion"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Producto": {
+          "cardinality": "many",
+          "target.entity": "Producto",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "Cliente": {
+      "source": {
+        "object": "[dbo].[Cliente]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Cliente",
+          "plural": "Clientes"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "idCliente",
+                  "Nombre",
+                  "Apellidos",
+                  "Direccion",
+                  "Cp",
+                  "RegimenFiscal",
+                  "Telefono",
+                  "RFC",
+                  "FechaAlta",
+                  "Activo",
+                  "Ciudad",
+                  "Municipio",
+                  "Localidad",
+                  "Pais"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "many",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "EstadoDocumento": {
+      "source": {
+        "object": "[dbo].[EstadoDocumento]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "EstadoDocumento",
+          "plural": "EstadoDocumentos"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdEstadoDocumento",
+                  "Estado"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "many",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "Factura": {
+      "source": {
+        "object": "[dbo].[Factura]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Factura",
+          "plural": "Facturas"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdFactura",
+                  "Serie",
+                  "Folio",
+                  "IdEstadoDocumento",
+                  "Subtotal",
+                  "TotalDescuento",
+                  "IdCliente",
+                  "TotalImpuestos",
+                  "Total",
+                  "IdFormaPago",
+                  "IdMetodoPago",
+                  "IdMoneda",
+                  "FechaEmision"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Cliente": {
+          "cardinality": "one",
+          "target.entity": "Cliente",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "EstadoDocumento": {
+          "cardinality": "one",
+          "target.entity": "EstadoDocumento",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "FormaPago": {
+          "cardinality": "one",
+          "target.entity": "FormaPago",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "MetodoPago": {
+          "cardinality": "one",
+          "target.entity": "MetodoPago",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "Monedum": {
+          "cardinality": "one",
+          "target.entity": "Monedum",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "FacturaDetalle": {
+          "cardinality": "many",
+          "target.entity": "FacturaDetalle",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "FacturaDetalle": {
+      "source": {
+        "object": "[dbo].[FacturaDetalle]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "FacturaDetalle",
+          "plural": "FacturaDetalles"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdFacturaDetalle",
+                  "IdFactura",
+                  "IdProducto",
+                  "IVA",
+                  "Descuento",
+                  "Importe",
+                  "Cantidad",
+                  "PrecioUnitario"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "one",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "Producto": {
+          "cardinality": "one",
+          "target.entity": "Producto",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "FormaPago": {
+      "source": {
+        "object": "[dbo].[FormaPago]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "FormaPago",
+          "plural": "FormaPagos"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdFormaPago",
+                  "FormaDePago",
+                  "Codigo"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "many",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "Linea": {
+      "source": {
+        "object": "[dbo].[Linea]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Linea",
+          "plural": "Lineas"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "idLinea",
+                  "Descripcion"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Producto": {
+          "cardinality": "many",
+          "target.entity": "Producto",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "MetodoPago": {
+      "source": {
+        "object": "[dbo].[MetodoPago]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "MetodoPago",
+          "plural": "MetodoPagos"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdMetodoPago",
+                  "Descripcion",
+                  "Codigo"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "many",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "Monedum": {
+      "source": {
+        "object": "[dbo].[Moneda]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Monedum",
+          "plural": "Moneda"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdMoneda",
+                  "Nombre",
+                  "Codigo"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "Factura": {
+          "cardinality": "many",
+          "target.entity": "Factura",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    },
+    "Producto": {
+      "source": {
+        "object": "[dbo].[Producto]",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "Producto",
+          "plural": "Productos"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*",
+              "fields": {
+                "exclude": [],
+                "include": [
+                  "IdProducto",
+                  "Codigo",
+                  "Descripcion",
+                  "PrecioUnitario",
+                  "Stock",
+                  "Costo",
+                  "Estado",
+                  "Fecha",
+                  "UnidadSAT",
+                  "ClaveSAT",
+                  "IdCategoria",
+                  "IdLinea",
+                  "EsProducto"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "relationships": {
+        "FacturaDetalle": {
+          "cardinality": "many",
+          "target.entity": "FacturaDetalle",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "Categorium": {
+          "cardinality": "one",
+          "target.entity": "Categorium",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        },
+        "Linea": {
+          "cardinality": "one",
+          "target.entity": "Linea",
+          "source.fields": [],
+          "target.fields": [],
+          "linking.source.fields": [],
+          "linking.target.fields": []
+        }
+      }
+    }
+  }
+}

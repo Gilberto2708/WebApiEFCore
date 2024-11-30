@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar Cliente";
+}
+
+<div class="card shadow">
+    <div class="card-header bg-danger text-white">
+        <h3 class="m-0">¿Está seguro de eliminar este cliente?</h3>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i>
+            Esta acción no se puede deshacer. Se eliminará permanentemente el cliente:
+            <strong>@Model.Nombre @Model.Apellidos</strong>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-light">
+                        <h5 class="m-0">Datos del Cliente</h5>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4">RFC</dt>
+                            <dd class="col-sm-8">@Model.Rfc</dd>
+
+                            <dt class="col-sm-4">Teléfono</dt>
+                            <dd class="col-sm-8">@Model.Telefono</dd>
+
+                            <dt class="col-sm-4">Dirección</dt>
+                            <dd class="col-sm-8">
+                                @Model.Direccion<br />
+                                CP: @Model.Cp<br />
+                                @Model.Ciudad, @Model.Municipio<br />
+                                @Model.Pais
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="IdCliente" />
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash"></i> Eliminar Cliente
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Cancelar
+            </a>
+        </form>
+    </div>
+</div>

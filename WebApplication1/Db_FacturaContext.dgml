@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+<Node Id="IModel" Label="Db_FacturaContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="9.0.0" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+InversePropertyAttributeConvention:InverseNavigations: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]
+Relational:MaxIdentifierLength: 128
+SqlServer:ValueGenerationStrategy: IdentityColumn" Category="Model" Group="Expanded" />
+<Node Id = "Categorium" Label="Categorium" Name="Categorium" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Categoria
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Cliente" Label="Cliente" Name="Cliente" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Cliente
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Categorium.IdCategoria" Label="IdCategoria (int)" Name="IdCategoria" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: idCategoria
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Categorium.Productos" Label="Productos (*)" Name="Productos" Category="Navigation Collection" Type="ICollection&lt;Producto&gt;"  Field="" Dependent="Producto" Principal="" Inverse="IdCategoriaNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Categorium.Descripcion" Label="Descripcion (string)" Name="Descripcion" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "EstadoDocumento" Label="EstadoDocumento" Name="EstadoDocumento" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: EstadoDocumento
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Cliente.IdCliente" Label="IdCliente (int)" Name="IdCliente" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: idCliente
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Cliente.Facturas" Label="Facturas (*)" Name="Facturas" Category="Navigation Collection" Type="ICollection&lt;Factura&gt;"  Field="" Dependent="Factura" Principal="" Inverse="IdClienteNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Cliente.Activo" Label="Activo (bool)" Name="Activo" Category="Property Required" Type="bool" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Apellidos" Label="Apellidos (string)" Name="Apellidos" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Ciudad" Label="Ciudad (string)" Name="Ciudad" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Cp" Label="Cp (string)" Name="Cp" Category="Property Optional" Type="string" MaxLength="(5)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 5
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Direccion" Label="Direccion (string)" Name="Direccion" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.FechaAlta" Label="FechaAlta (DateTime)" Name="FechaAlta" Category="Property Required" Type="DateTime" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Localidad" Label="Localidad (string)" Name="Localidad" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Municipio" Label="Municipio (string)" Name="Municipio" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Nombre" Label="Nombre (string)" Name="Nombre" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Pais" Label="Pais (string)" Name="Pais" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.RegimenFiscal" Label="RegimenFiscal (string)" Name="RegimenFiscal" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Rfc" Label="Rfc (string)" Name="Rfc" Category="Property Optional" Type="string" MaxLength="(14)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 14
+Relational:ColumnName: RFC
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Cliente.Telefono" Label="Telefono (string)" Name="Telefono" Category="Property Optional" Type="string" MaxLength="(20)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 20
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura" Label="Factura" Name="Factura" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Factura
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "EstadoDocumento.IdEstadoDocumento" Label="IdEstadoDocumento (int)" Name="IdEstadoDocumento" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "EstadoDocumento.Facturas" Label="Facturas (*)" Name="Facturas" Category="Navigation Collection" Type="ICollection&lt;Factura&gt;"  Field="" Dependent="Factura" Principal="" Inverse="IdEstadoDocumentoNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "EstadoDocumento.Estado" Label="Estado (string)" Name="Estado" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle" Label="FacturaDetalle" Name="FacturaDetalle" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: FacturaDetalle
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Factura.IdFactura" Label="IdFactura (int)" Name="IdFactura" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Factura.FacturaDetalles" Label="FacturaDetalles (*)" Name="FacturaDetalles" Category="Navigation Collection" Type="ICollection&lt;FacturaDetalle&gt;"  Field="" Dependent="FacturaDetalle" Principal="" Inverse="IdFacturaNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.IdClienteNavigation" Label="IdClienteNavigation (1)" Name="IdClienteNavigation" Category="Navigation Property" Type="Cliente"  Field="" Dependent="" Principal="Cliente" Inverse="Facturas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.IdEstadoDocumentoNavigation" Label="IdEstadoDocumentoNavigation (1)" Name="IdEstadoDocumentoNavigation" Category="Navigation Property" Type="EstadoDocumento"  Field="" Dependent="" Principal="EstadoDocumento" Inverse="Facturas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.IdFormaPagoNavigation" Label="IdFormaPagoNavigation (1)" Name="IdFormaPagoNavigation" Category="Navigation Property" Type="FormaPago"  Field="" Dependent="" Principal="FormaPago" Inverse="Facturas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.IdMetodoPagoNavigation" Label="IdMetodoPagoNavigation (1)" Name="IdMetodoPagoNavigation" Category="Navigation Property" Type="MetodoPago"  Field="" Dependent="" Principal="MetodoPago" Inverse="Facturas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.IdMonedaNavigation" Label="IdMonedaNavigation (1)" Name="IdMonedaNavigation" Category="Navigation Property" Type="Monedum"  Field="" Dependent="" Principal="Monedum" Inverse="Facturas" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Factura.FechaEmision" Label="FechaEmision (DateTime?)" Name="FechaEmision" Category="Property Optional" Type="DateTime?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: datetime
+Relational:DefaultValueSql: (getdate())" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Factura.Folio" Label="Folio (string)" Name="Folio" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.IdCliente" Label="IdCliente (int)" Name="IdCliente" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.IdEstadoDocumento" Label="IdEstadoDocumento (int?)" Name="IdEstadoDocumento" Category="Property Foreign" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.IdFormaPago" Label="IdFormaPago (int)" Name="IdFormaPago" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.IdMetodoPago" Label="IdMetodoPago (int)" Name="IdMetodoPago" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.IdMoneda" Label="IdMoneda (int)" Name="IdMoneda" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.Serie" Label="Serie (string)" Name="Serie" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.Subtotal" Label="Subtotal (decimal?)" Name="Subtotal" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.Total" Label="Total (decimal?)" Name="Total" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.TotalDescuento" Label="TotalDescuento (decimal?)" Name="TotalDescuento" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Factura.TotalImpuestos" Label="TotalImpuestos (decimal?)" Name="TotalImpuestos" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FormaPago" Label="FormaPago" Name="FormaPago" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: FormaPago
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "FacturaDetalle.IdFacturaDetalle" Label="IdFacturaDetalle (int)" Name="IdFacturaDetalle" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "FacturaDetalle.IdFacturaNavigation" Label="IdFacturaNavigation (1)" Name="IdFacturaNavigation" Category="Navigation Property" Type="Factura"  Field="" Dependent="" Principal="Factura" Inverse="FacturaDetalles" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "FacturaDetalle.IdProductoNavigation" Label="IdProductoNavigation (1)" Name="IdProductoNavigation" Category="Navigation Property" Type="Producto"  Field="" Dependent="" Principal="Producto" Inverse="FacturaDetalles" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "FacturaDetalle.Cantidad" Label="Cantidad (decimal?)" Name="Cantidad" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.Descuento" Label="Descuento (decimal?)" Name="Descuento" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.IdFactura" Label="IdFactura (int)" Name="IdFactura" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.IdProducto" Label="IdProducto (int)" Name="IdProducto" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.Importe" Label="Importe (decimal?)" Name="Importe" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.Iva" Label="Iva (decimal?)" Name="Iva" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: IVA
+Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FacturaDetalle.PrecioUnitario" Label="PrecioUnitario (decimal?)" Name="PrecioUnitario" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Linea" Label="Linea" Name="Linea" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Linea
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "FormaPago.IdFormaPago" Label="IdFormaPago (int)" Name="IdFormaPago" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "FormaPago.Facturas" Label="Facturas (*)" Name="Facturas" Category="Navigation Collection" Type="ICollection&lt;Factura&gt;"  Field="" Dependent="Factura" Principal="" Inverse="IdFormaPagoNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "FormaPago.Codigo" Label="Codigo (string)" Name="Codigo" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "FormaPago.FormaDePago" Label="FormaDePago (string)" Name="FormaDePago" Category="Property Required" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "MetodoPago" Label="MetodoPago" Name="MetodoPago" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: MetodoPago
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Linea.IdLinea" Label="IdLinea (int)" Name="IdLinea" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnName: idLinea
+SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Linea.Productos" Label="Productos (*)" Name="Productos" Category="Navigation Collection" Type="ICollection&lt;Producto&gt;"  Field="" Dependent="Producto" Principal="" Inverse="IdLineaNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Linea.Descripcion" Label="Descripcion (string)" Name="Descripcion" Category="Property Optional" Type="string" MaxLength="(100)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 100
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Monedum" Label="Monedum" Name="Monedum" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Moneda
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "MetodoPago.IdMetodoPago" Label="IdMetodoPago (int)" Name="IdMetodoPago" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "MetodoPago.Facturas" Label="Facturas (*)" Name="Facturas" Category="Navigation Collection" Type="ICollection&lt;Factura&gt;"  Field="" Dependent="Factura" Principal="" Inverse="IdMetodoPagoNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "MetodoPago.Codigo" Label="Codigo (string)" Name="Codigo" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "MetodoPago.Descripcion" Label="Descripcion (string)" Name="Descripcion" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto" Label="Producto" Name="Producto" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:Schema:
+Relational:TableName: Producto
+RelationshipDiscoveryConvention:NavigationCandidates: Microsoft.EntityFrameworkCore.Utilities.OrderedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
+<Node Id = "Monedum.IdMoneda" Label="IdMoneda (int)" Name="IdMoneda" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Monedum.Facturas" Label="Facturas (*)" Name="Facturas" Category="Navigation Collection" Type="ICollection&lt;Factura&gt;"  Field="" Dependent="Factura" Principal="" Inverse="IdMonedaNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Monedum.Codigo" Label="Codigo (string)" Name="Codigo" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Monedum.Nombre" Label="Nombre (string)" Name="Nombre" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto" Label="Producto" Name="Producto" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
+<Node Id = "Producto.IdProducto" Label="IdProducto (int)" Name="IdProducto" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="SqlServer:ValueGenerationStrategy: IdentityColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
+<Node Id = "Producto.FacturaDetalles" Label="FacturaDetalles (*)" Name="FacturaDetalles" Category="Navigation Collection" Type="ICollection&lt;FacturaDetalle&gt;"  Field="" Dependent="FacturaDetalle" Principal="" Inverse="IdProductoNavigation" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Producto.IdCategoriaNavigation" Label="IdCategoriaNavigation (1)" Name="IdCategoriaNavigation" Category="Navigation Property" Type="Categorium"  Field="" Dependent="" Principal="Categorium" Inverse="Productos" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Producto.IdLineaNavigation" Label="IdLineaNavigation (1)" Name="IdLineaNavigation" Category="Navigation Property" Type="Linea"  Field="" Dependent="" Principal="Linea" Inverse="Productos" PropertyAccessMode="PropertyAccessMode.Default" />
+<Node Id = "Producto.ClaveSat" Label="ClaveSat (string)" Name="ClaveSat" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Relational:ColumnName: ClaveSAT
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Codigo" Label="Codigo (string)" Name="Codigo" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Costo" Label="Costo (decimal?)" Name="Costo" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Descripcion" Label="Descripcion (string)" Name="Descripcion" Category="Property Required" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.EsProducto" Label="EsProducto (int?)" Name="EsProducto" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Estado" Label="Estado (int?)" Name="Estado" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Fecha" Label="Fecha (DateOnly?)" Name="Fecha" Category="Property Optional" Type="DateOnly?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.IdCategoria" Label="IdCategoria (int)" Name="IdCategoria" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.IdLinea" Label="IdLinea (int)" Name="IdLinea" Category="Property Foreign" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.PrecioUnitario" Label="PrecioUnitario (decimal?)" Name="PrecioUnitario" Category="Property Optional" Type="decimal?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Relational:ColumnType: decimal(18, 2)" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.Stock" Label="Stock (int?)" Name="Stock" Category="Property Optional" Type="int?" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+<Node Id = "Producto.UnidadSat" Label="UnidadSat (string)" Name="UnidadSat" Category="Property Optional" Type="string" MaxLength="(45)" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="MaxLength: 45
+Relational:ColumnName: UnidadSAT
+Unicode: False" IsPrimaryKey="False" IsForeignKey="False" IsRequired="False" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+  </Nodes>
+  <Links>
+<Link Source = "IModel" Target="Categorium" Category="Contains" />
+<Link Source = "IModel" Target="Cliente" Category="Contains" />
+<Link Source = "Categorium" Target="Categorium.Productos" Category="Contains" />
+<Link Source = "Categorium" Target="Categorium.IdCategoria" Category="Contains" />
+<Link Source = "Categorium" Target="Categorium.Descripcion" Category="Contains" />
+<Link Source = "IModel" Target="EstadoDocumento" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Facturas" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.IdCliente" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Activo" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Apellidos" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Ciudad" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Cp" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Direccion" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.FechaAlta" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Localidad" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Municipio" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Nombre" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Pais" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.RegimenFiscal" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Rfc" Category="Contains" />
+<Link Source = "Cliente" Target="Cliente.Telefono" Category="Contains" />
+<Link Source = "IModel" Target="Factura" Category="Contains" />
+<Link Source = "EstadoDocumento" Target="EstadoDocumento.Facturas" Category="Contains" />
+<Link Source = "EstadoDocumento" Target="EstadoDocumento.IdEstadoDocumento" Category="Contains" />
+<Link Source = "EstadoDocumento" Target="EstadoDocumento.Estado" Category="Contains" />
+<Link Source = "IModel" Target="FacturaDetalle" Category="Contains" />
+<Link Source = "Factura" Target="Factura.FacturaDetalles" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdClienteNavigation" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdEstadoDocumentoNavigation" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdFormaPagoNavigation" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdMetodoPagoNavigation" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdMonedaNavigation" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdFactura" Category="Contains" />
+<Link Source="Factura" Target="Cliente" From="Factura.IdCliente" To="Cliente.IdCliente" Name="Factura -> Cliente" Annotations="Relational:Name: FK_Factura_Cliente" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Factura" Target="EstadoDocumento" From="Factura.IdEstadoDocumento" To="EstadoDocumento.IdEstadoDocumento" Name="Factura -> EstadoDocumento" Annotations="Relational:Name: FK_Factura_EstadoDocumento" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Factura" Target="FormaPago" From="Factura.IdFormaPago" To="FormaPago.IdFormaPago" Name="Factura -> FormaPago" Annotations="Relational:Name: FK_Factura_FormaPago" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Factura" Target="MetodoPago" From="Factura.IdMetodoPago" To="MetodoPago.IdMetodoPago" Name="Factura -> MetodoPago" Annotations="Relational:Name: FK_Factura_MetodoPago" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Factura" Target="Monedum" From="Factura.IdMoneda" To="Monedum.IdMoneda" Name="Factura -> Monedum" Annotations="Relational:Name: FK_Factura_Moneda" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Factura" Target="Factura.FechaEmision" Category="Contains" />
+<Link Source = "Factura" Target="Factura.Folio" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdCliente" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdEstadoDocumento" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdFormaPago" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdMetodoPago" Category="Contains" />
+<Link Source = "Factura" Target="Factura.IdMoneda" Category="Contains" />
+<Link Source = "Factura" Target="Factura.Serie" Category="Contains" />
+<Link Source = "Factura" Target="Factura.Subtotal" Category="Contains" />
+<Link Source = "Factura" Target="Factura.Total" Category="Contains" />
+<Link Source = "Factura" Target="Factura.TotalDescuento" Category="Contains" />
+<Link Source = "Factura" Target="Factura.TotalImpuestos" Category="Contains" />
+<Link Source = "IModel" Target="FormaPago" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.IdFacturaNavigation" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.IdProductoNavigation" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.IdFacturaDetalle" Category="Contains" />
+<Link Source="FacturaDetalle" Target="Factura" From="FacturaDetalle.IdFactura" To="Factura.IdFactura" Name="FacturaDetalle -> Factura" Annotations="Relational:Name: FK_FacturaDetalle_Factura" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="FacturaDetalle" Target="Producto" From="FacturaDetalle.IdProducto" To="Producto.IdProducto" Name="FacturaDetalle -> Producto" Annotations="Relational:Name: FK_FacturaDetalle_Producto" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.Cantidad" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.Descuento" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.IdFactura" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.IdProducto" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.Importe" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.Iva" Category="Contains" />
+<Link Source = "FacturaDetalle" Target="FacturaDetalle.PrecioUnitario" Category="Contains" />
+<Link Source = "IModel" Target="Linea" Category="Contains" />
+<Link Source = "FormaPago" Target="FormaPago.Facturas" Category="Contains" />
+<Link Source = "FormaPago" Target="FormaPago.IdFormaPago" Category="Contains" />
+<Link Source = "FormaPago" Target="FormaPago.Codigo" Category="Contains" />
+<Link Source = "FormaPago" Target="FormaPago.FormaDePago" Category="Contains" />
+<Link Source = "IModel" Target="MetodoPago" Category="Contains" />
+<Link Source = "Linea" Target="Linea.Productos" Category="Contains" />
+<Link Source = "Linea" Target="Linea.IdLinea" Category="Contains" />
+<Link Source = "Linea" Target="Linea.Descripcion" Category="Contains" />
+<Link Source = "IModel" Target="Monedum" Category="Contains" />
+<Link Source = "MetodoPago" Target="MetodoPago.Facturas" Category="Contains" />
+<Link Source = "MetodoPago" Target="MetodoPago.IdMetodoPago" Category="Contains" />
+<Link Source = "MetodoPago" Target="MetodoPago.Codigo" Category="Contains" />
+<Link Source = "MetodoPago" Target="MetodoPago.Descripcion" Category="Contains" />
+<Link Source = "IModel" Target="Producto" Category="Contains" />
+<Link Source = "Monedum" Target="Monedum.Facturas" Category="Contains" />
+<Link Source = "Monedum" Target="Monedum.IdMoneda" Category="Contains" />
+<Link Source = "Monedum" Target="Monedum.Codigo" Category="Contains" />
+<Link Source = "Monedum" Target="Monedum.Nombre" Category="Contains" />
+<Link Source = "IModel" Target="Producto" Category="Contains" />
+<Link Source = "Producto" Target="Producto.FacturaDetalles" Category="Contains" />
+<Link Source = "Producto" Target="Producto.IdCategoriaNavigation" Category="Contains" />
+<Link Source = "Producto" Target="Producto.IdLineaNavigation" Category="Contains" />
+<Link Source = "Producto" Target="Producto.IdProducto" Category="Contains" />
+<Link Source="Producto" Target="Categorium" From="Producto.IdCategoria" To="Categorium.IdCategoria" Name="Producto -> Categorium" Annotations="Relational:Name: FK_Producto_Categoria" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source="Producto" Target="Linea" From="Producto.IdLinea" To="Linea.IdLinea" Name="Producto -> Linea" Annotations="Relational:Name: FK_Producto_Linea" IsUnique="False" Label="1:*" Category="Foreign Key" />
+<Link Source = "Producto" Target="Producto.ClaveSat" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Codigo" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Costo" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Descripcion" Category="Contains" />
+<Link Source = "Producto" Target="Producto.EsProducto" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Estado" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Fecha" Category="Contains" />
+<Link Source = "Producto" Target="Producto.IdCategoria" Category="Contains" />
+<Link Source = "Producto" Target="Producto.IdLinea" Category="Contains" />
+<Link Source = "Producto" Target="Producto.PrecioUnitario" Category="Contains" />
+<Link Source = "Producto" Target="Producto.Stock" Category="Contains" />
+<Link Source = "Producto" Target="Producto.UnidadSat" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
+      <Condition Expression="HasCategory('EntityType')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Property Required" ValueLabel="True">
+      <Condition Expression="HasCategory('Property Required')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Property" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Property')" />
+      <Setter Property="Background" Value="#FF990000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Navigation Collection" ValueLabel="True">
+      <Condition Expression="HasCategory('Navigation Collection')" />
+      <Setter Property="Background" Value="#FFFF3232" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Model" ValueLabel="True">
+      <Condition Expression="HasCategory('Model')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+  <Properties>
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+  </Properties>
+</DirectedGraph>

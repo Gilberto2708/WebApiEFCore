@@ -1,0 +1,89 @@
+﻿@model WebApplication1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<div class="card shadow">
+    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+        <h3 class="m-0">Detalles del Cliente</h3>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.IdCliente" class="btn btn-warning">
+                <i class="bi bi-pencil"></i> Editar
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Regresar
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-light">
+                        <h5 class="m-0">Datos Personales</h5>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">Nombre Completo</dt>
+                            <dd class="col-sm-8">@Model.Nombre @Model.Apellidos</dd>
+
+                            <dt class="col-sm-4">Teléfono</dt>
+                            <dd class="col-sm-8">@Model.Telefono</dd>
+
+                            <dt class="col-sm-4">RFC</dt>
+                            <dd class="col-sm-8">@Model.Rfc</dd>
+
+                            <dt class="col-sm-4">Régimen Fiscal</dt>
+                            <dd class="col-sm-8">@Model.RegimenFiscal</dd>
+
+                            <dt class="col-sm-4">Fecha Alta</dt>
+                            <dd class="col-sm-8">@Model.FechaAlta.ToString("dd/MM/yyyy")</dd>
+
+                            <dt class="col-sm-4">Estado</dt>
+                            <dd class="col-sm-8">
+                                @if (Model.Activo)
+                                {
+                                    <span class="badge bg-success">Activo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Inactivo</span>
+                                }
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h5 class="m-0">Dirección</h5>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4">Dirección</dt>
+                            <dd class="col-sm-8">@Model.Direccion</dd>
+
+                            <dt class="col-sm-4">CP</dt>
+                            <dd class="col-sm-8">@Model.Cp</dd>
+
+                            <dt class="col-sm-4">Ciudad</dt>
+                            <dd class="col-sm-8">@Model.Ciudad</dd>
+
+                            <dt class="col-sm-4">Municipio</dt>
+                            <dd class="col-sm-8">@Model.Municipio</dd>
+
+                            <dt class="col-sm-4">Localidad</dt>
+                            <dd class="col-sm-8">@Model.Localidad</dd>
+
+                            <dt class="col-sm-4">País</dt>
+                            <dd class="col-sm-8">@Model.Pais</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
